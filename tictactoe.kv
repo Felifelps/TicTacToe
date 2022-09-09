@@ -1,0 +1,17 @@
+#:kivy 1.9.0
+#:import grid grid
+
+<MainWidget>:
+    Label:
+        text: "TicTacToe"
+        font_size: 50 
+        pos_hint: {"center_x": .5, "top": 1.4}    
+
+    Grid:
+        id: grid
+        pos_hint: {"center_x": .5, "center_y": .5}
+
+    Label: 
+        id: counter
+        text: "Vez do:"
+        pos_hint: {"center_x": .5, "top": .75}
