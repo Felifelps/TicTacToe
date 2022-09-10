@@ -25,14 +25,18 @@ class Tile(Label):
 class Grid(GridLayout):
     def __init__(self, **kwargs):
         super(Grid, self).__init__()
-        self.tab = []
-        for i in range(1, 10):
-            self.add_widget(Tile(self, i))
-            self.tab.append(" ")
-        self.who_play = "X"
+        self.restart()
     
     def update_who_play(self):
         self.who_play = ("X" if self.who_play == "O" else "O")
     
     def update_tab(self, pos):
         self.tab[pos - 1] = self.who_play
+    
+    def restart(self):
+        self.clear_widgets()
+        self.who_play = "X"
+        self.tab = []
+        for i in range(1, 10):
+            self.add_widget(Tile(self, i))
+            self.tab.append(" ")

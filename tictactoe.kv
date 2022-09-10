@@ -3,9 +3,16 @@
 
 <MainWidget>:
     Label:
-        text: "TicTacToe"
-        font_size: 50 
-        pos_hint: {"center_x": .5, "top": 1.4}    
+        text: "[sup][color=#FFFF00]Jogo[/color][/sup] [size=40][color=#00FFFF]da[/color][/size] [sub][color=#FF00FF]Velha[/color][/sub]"
+        font_size: 80 
+        pos_hint: {"center_x": .5, "top": 1.4}  
+        markup: True
+
+    Label:
+        id: victory
+        text: ""
+        font_size: 40 
+        pos_hint: {"center_x": .5, "top": 1.275}  
 
     Grid:
         id: grid
@@ -14,4 +21,20 @@
     Label: 
         id: counter
         text: "Vez do:"
-        pos_hint: {"center_x": .5, "top": .75}
+        pos_hint: {"center_x": .5, "center_y": .25}
+    
+    Button:
+        canvas:
+            Line:
+                rectangle: self.x, self.y, self.width, self.height
+                width: 2
+            
+        id: restart
+        text: "Restart"
+        background_color: .5, .5, .5, 1
+        font_size: 20
+        size_hint: None, None
+        size: 100, 60
+        pos_hint: {"center_x": .5, "center_y": .15}
+            
+    
